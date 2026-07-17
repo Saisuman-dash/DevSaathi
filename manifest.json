@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "DevSaathi",
+  "version": "0.1.0",
+  "description": "AI Learning Companion",
+
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "https://leetcode.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*"
+      ],
+      "js": [
+        "content/platforms/leetcode/index.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
