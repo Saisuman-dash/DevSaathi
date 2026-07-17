@@ -35,3 +35,9 @@ A project should first have a simple and understandable build pipeline before in
 Reason:
 
 Understanding how the build works makes debugging significantly easier and prevents over-reliance on frameworks.
+
+## Lesson 005 – Build Vertical Slices
+
+Rather than implementing many unfinished features, first build a complete end-to-end flow.
+
+A working vertical slice provides confidence that the architecture is correct before adding complexity.

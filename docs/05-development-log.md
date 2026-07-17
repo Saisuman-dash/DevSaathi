@@ -147,3 +147,16 @@ Establish a stable build pipeline without relying on third-party extension build
 ### Outcome
 
 The project now compiles successfully from `src/` to `dist/`, providing a transparent and maintainable build process.
+
+## Checkpoint 8 – First Working Vertical Slice
+
+### Completed
+
+- Extension successfully loads in Chrome
+- Service Worker initializes
+- LeetCode content script injects correctly
+- Runtime messaging between content script and service worker verified
+
+### Outcome
+
+DevSaathi can now observe browser activity and communicate internally using Chrome's messaging system.
