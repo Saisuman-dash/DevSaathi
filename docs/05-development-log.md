@@ -160,3 +160,14 @@ The project now compiles successfully from `src/` to `dist/`, providing a transp
 ### Outcome
 
 DevSaathi can now observe browser activity and communicate internally using Chrome's messaging system.
+
+## Checkpoint 9 – Problem Page Detection
+
+### Added
+
+- LeetCode problem page detector
+- New event: PROBLEM_PAGE_OPENED
+
+### Result
+
+DevSaathi now distinguishes between generic LeetCode pages and actual coding problem pages.

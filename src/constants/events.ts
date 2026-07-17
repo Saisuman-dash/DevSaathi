@@ -1,5 +1,5 @@
 export const EVENTS = {
-    PLATFORM_CONNECTED: "PLATFORM_CONNECTED",
-} as const;
+  PLATFORM_CONNECTED: "PLATFORM_CONNECTED",
 
-export type EventType = typeof EVENTS[keyof typeof EVENTS];
+  PROBLEM_PAGE_OPENED: "PROBLEM_PAGE_OPENED",
+} as const;
