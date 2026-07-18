@@ -80,3 +80,12 @@ Upcoming:
 - Service Worker
 - LeetCode Content Script
 - Event Pipeline
+
+## Sprint 2 — Backend Integration
+
+- [ ] FastAPI backend
+- [ ] Event API
+- [ ] SQLite integration
+- [ ] Session persistence
+- [ ] AI summary pipeline
+- [ ] Popup API integration

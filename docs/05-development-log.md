@@ -171,3 +171,58 @@ DevSaathi can now observe browser activity and communicate internally using Chro
 ### Result
 
 DevSaathi now distinguishes between generic LeetCode pages and actual coding problem pages.
+
+# Day 2 — LeetCode Integration
+
+## Objectives
+
+- Complete Chrome Extension foundation.
+- Detect LeetCode problem pages.
+- Extract problem metadata.
+- Start session tracking.
+
+---
+
+## Completed
+
+- Content Script injection verified.
+- Problem page detection implemented.
+- LeetCode parser implemented.
+- Session Manager integrated.
+- Successfully extracting:
+  - Title
+  - Slug
+  - Difficulty
+
+- Event dispatch for `PROBLEM_PAGE_OPENED` implemented.
+
+---
+
+## Major Issue
+
+### Problem
+
+The parser always returned `null`.
+
+### Root Cause
+
+Initially the parser relied on `window.__NEXT_DATA__`.
+
+Inside the Chrome Extension content script, this did not provide the expected page data, causing metadata extraction to fail.
+
+### Solution
+
+Instead of relying on the global object, the parser now reads and parses the JSON contained inside:
+
+`<script id="__NEXT_DATA__">`
+
+This restored reliable metadata extraction.
+
+---
+
+## Current Status
+
+✅ Extension successfully detects LeetCode problems and extracts metadata.
+
+Next:
+Connect the extension with the FastAPI backend.

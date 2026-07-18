@@ -41,3 +41,11 @@ Understanding how the build works makes debugging significantly easier and preve
 Rather than implementing many unfinished features, first build a complete end-to-end flow.
 
 A working vertical slice provides confidence that the architecture is correct before adding complexity.
+
+# Chrome Extension Lesson
+
+Do not assume page globals are always reliable inside content scripts.
+
+When data already exists inside HTML script tags (like `__NEXT_DATA__`), parsing the DOM is often more reliable than depending on runtime globals.
+
+Always verify assumptions with console logs before changing architecture.
