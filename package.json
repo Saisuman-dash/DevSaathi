@@ -2,12 +2,13 @@
   "name": "devsaathi-extension",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "build": "tsc && node scripts/build.js"
   },
   "devDependencies": {
     "@types/chrome": "^0.2.2",
+    "esbuild": "^0.28.1",
     "typescript": "5.9"
   }
 }

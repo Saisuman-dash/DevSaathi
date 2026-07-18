@@ -1,7 +1,6 @@
-import type { EventType } from "../constants/events";
 
 export interface ExtensionEvent {
-    type: EventType;
+    type: string;
     platform: string;
     timestamp: number;
 }

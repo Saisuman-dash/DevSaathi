@@ -1,24 +1,42 @@
 import { EVENTS } from "../../../constants/events";
 import { isProblemPage } from "./detector";
+import { parseProblem } from "./parser";
+import { startSession, endSession } from "../../../session/sessionManager";
 
-console.log("🟢 DevSaathi injected into LeetCode");
+console.log("🟢 DevSaathi injected");
 
-// Always notify that LeetCode is active
+// Notify that LeetCode is active
 chrome.runtime.sendMessage({
-  type: EVENTS.PLATFORM_CONNECTED,
-  platform: "leetcode",
-  url: location.href,
-  timestamp: Date.now(),
-});
-
-// Detect if this is a problem page
-if (isProblemPage()) {
-  console.log("📘 Problem page detected");
-
-  chrome.runtime.sendMessage({
-    type: EVENTS.PROBLEM_PAGE_OPENED,
+    type: EVENTS.PLATFORM_CONNECTED,
     platform: "leetcode",
     url: location.href,
     timestamp: Date.now(),
-  });
+});
+
+if (isProblemPage()) {
+
+    console.log("📘 Problem page detected");
+
+    const problem = parseProblem();
+
+    if (problem) {
+
+        console.log("📘 Parsed Problem");
+
+        console.table(problem);
+
+        startSession(problem.slug);
+
+        window.addEventListener("beforeunload", () => {
+            endSession();
+        });
+
+        chrome.runtime.sendMessage({
+            type: EVENTS.PROBLEM_PAGE_OPENED,
+            platform: "leetcode",
+            timestamp: Date.now(),
+            problem,
+        });
+
+    }
 }
