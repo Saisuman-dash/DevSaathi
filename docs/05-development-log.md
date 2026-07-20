@@ -226,3 +226,104 @@ This restored reliable metadata extraction.
 
 Next:
 Connect the extension with the FastAPI backend.
+
+# Day 3 Sprint 1 Progress
+
+## ✅ Session Tracking System Completed
+
+### Features Implemented
+
+- Detect LeetCode problem pages
+- Parse problem metadata
+  - Title
+  - Slug
+  - Difficulty
+- Start coding session automatically
+- Heartbeat every 30 seconds
+- Track submissions
+- Track number of attempts
+- Detect Accepted / Wrong Answer
+- Track session duration
+- Store completed sessions in SQLite
+- Backend analytics endpoints
+
+---
+
+## Backend
+
+Implemented:
+
+- SQLite database
+- Session lifecycle manager
+- Analytics service
+- FastAPI event ingestion
+
+Current session fields:
+
+- Platform
+- Problem
+- Difficulty
+- Start Time
+- End Time
+- Duration
+- Attempts
+- Solved Status
+
+---
+
+## APIs
+
+POST /events
+
+GET /analytics/today
+
+GET /analytics/history
+
+---
+
+## Analytics Available
+
+- Problems Solved
+- Total Attempts
+- Accuracy
+- Time Spent
+- Difficulty Distribution
+- Recent Sessions
+
+---
+
+## Architecture
+
+LeetCode
+↓
+
+Content Script
+↓
+
+Injected Page Hook
+↓
+
+FastAPI Backend
+↓
+
+SQLite
+
+---
+
+## Notes
+
+LeetCode submission results are captured using an injected page hook because the site's network requests execute in the page context rather than the extension's isolated content-script context.
+
+---
+
+## Status
+
+Sprint 1 Completed ✅
+
+Next Sprint:
+
+- AI Insights
+- Learning Analytics
+- Streak System
+- Session Recovery
+- Dashboard

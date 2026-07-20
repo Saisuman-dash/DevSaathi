@@ -1,7 +1,48 @@
-<!doctype html>
-<html>
-  <body>
-    <h2>DevSaathi</h2>
-    <script type="module" src="popup.js"></script>
-  </body>
-</html>
+<meta charset="UTF-8" />
+<div class="container">
+  <h1>🧠 DevSaathi</h1>
+  <p class="subtitle">Today's Activity</p>
+
+  <div class="card">
+    <span>📚 Problems</span>
+    <strong id="problems">0</strong>
+  </div>
+
+  <div class="card">
+    <span>⏱ Time</span>
+    <strong id="time">0 min</strong>
+  </div>
+
+  <div class="card">
+    <span>🟢 Easy</span>
+    <strong id="easy">0</strong>
+  </div>
+
+  <div class="card">
+    <span>🟡 Medium</span>
+    <strong id="medium">0</strong>
+  </div>
+
+  <div class="card">
+    <span>🔴 Hard</span>
+    <strong id="hard">0</strong>
+  </div>
+  <div class="card">
+    <span>✅ Solved</span>
+    <strong id="solved">0</strong>
+  </div>
+
+  <div class="card">
+    <span>🎯 Attempts</span>
+    <strong id="attempts">0</strong>
+  </div>
+
+  <div class="card">
+    <span>📈 Accuracy</span>
+    <strong id="accuracy">0%</strong>
+  </div>
+  <h3>Recent Sessions</h3>
+
+  <div id="history"></div>
+</div>
+<script type="module" src="./popup.js"></script>

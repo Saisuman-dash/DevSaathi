@@ -25,6 +25,15 @@ await build({
   target: "es2020",
 });
 
+// ---------- Bundle Page Hook ----------
+await build({
+  entryPoints: ["src/content/platforms/leetcode/pageHook.ts"],
+  bundle: true,
+  outfile: "dist/pageHook.js",
+  platform: "browser",
+  format: "iife",
+  target: "es2020",
+});
 // ---------- Bundle Popup ----------
 await build({
   entryPoints: ["src/popup/popup.ts"],

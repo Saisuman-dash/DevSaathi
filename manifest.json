@@ -4,6 +4,17 @@
   "version": "0.1.0",
   "description": "AI Learning Companion",
 
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "pageHook.js"
+      ],
+      "matches": [
+        "https://leetcode.com/*"
+      ]
+    }
+  ],
+
   "permissions": [
     "storage",
     "tabs"
